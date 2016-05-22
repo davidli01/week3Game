@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>The Psychic Game</title>
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -18,19 +18,43 @@
 
 	$(document).ready(function(){
 
-		var alphabet = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
-		var computer = Math.floor(Math.random())
 
-		console.log("comuter pick: " + computer);
+		var wins = 0
+		var loses = 0;
+		var left = 9;
+		var guesses = [];
+		var choice;
+		var alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+		var computer = Math.floor(Math.random() * 1);
 
+		document.onkeyup = function(event) {
+           // Get letter from player, check if already guessed, then replace letter
+           if (event.keyCode >= 65 && event.keyCode <= 90) {
+               userGuess = String.fromCharCode(event.keyCode).toUpperCase();
+               console.log(userGuess)
+               var
+            }
 
-		for (var i = 0; i < alphabet.length; i++){
-			alphabet.charAt(Math.floor(Math.random() * alphabet.length));
 		}
+	})
 
-		$( "#Random" ).on("keyup", function(event)
+	</script>
+		
 
-	}
+
+
+	
+
+	
+			
+			
+			
+		
+
+
+		
+
+	
 	</script>
 
 </body>
