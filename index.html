@@ -16,45 +16,51 @@
 	</div>
 	<script type="text/javascript">
 
-	$(document).ready(function(){
 
-
-		var wins = 0
+		var wins = 0;
 		var loses = 0;
+		var total = 9;
 		var left = 9;
 		var guesses = [];
 		var choice;
 		var alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-		var computer = Math.floor(Math.random() * 1);
+		var computer = Math.floor(Math.random() * 25);
+		var userGuess;
 
-		document.onkeyup = function(event) {
-           // Get letter from player, check if already guessed, then replace letter
-           if (event.keyCode >= 65 && event.keyCode <= 90) {
-               userGuess = String.fromCharCode(event.keyCode).toUpperCase();
-               console.log(userGuess)
-               var
-            }
-
+		//setting a function to be called multiple times, to change guesses left
+		var newLeft = function(){
+			document.querySelector(".left").innerHTML = left;
+		};
+		//function to add guesses to the array, function to be called 
+		var newGuesses = function(){
+			document.querySelector(".guesses").innerHTML = guesses;
 		}
-	})
 
-	</script>
+
+		console.log(computer);
+		//funtion for the key presses, what will happen, function(event) will allow to get info back
+		document.onkeyup = function(event) {
+			//record the guesses, event info that was retrieved on keyup
+			var pressed = String.fromCharCode(event.keyCode)
+			//push the guess to array
+			guesses.push(pressed);
+			//guesses left decrease
+			left--;
+
+
+           // Get letter from player, check if already guessed, then replace letter
+           /*if (event.keyCode >= 65 && event.keyCode <= 90) {
+               userGuess = String.fromCharCode(event.keyCode).toUpperCase();
+               console.log(event.keycode)
+            			
+	        }*/
+
+	    
+		}
+		
 		
 
-
-
-	
-
-	
-			
-			
-			
 		
-
-
-		
-
-	
 	</script>
 
 </body>
